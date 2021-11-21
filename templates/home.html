@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Heart Disease Prediction</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+
+    	<input type="text" name="age" placeholder="Age" required="required" />
+      <input type="text" name="sex" placeholder="Gender (male = 1 & female = 0)" required="required" />
+		  <input type="text" name="cp" placeholder="Chest Pain (0 to 3)" required="required" />
+		  <input type="text" name="trestbps" placeholder="resting blood pressure" required="required" />
+		  <input type="text" name="chol" placeholder="serum cholestoral in mg/dl" required="required" />
+
+      <input type="text" name="fbs" placeholder="fasting blood sugar(1>120; 0<120)" required="required" />
+      <input type="text" name="restecg" placeholder="resting electrocardiographic result(0,1,2)" required="required" />
+      <input type="text" name="thalach" placeholder="maximum heart rate achieved" required="required" />
+      <input type="text" name="exang" placeholder="exercise induced angina (1 = yes; 0 = no)" required="required" />
+      <input type="text" name="oldpeak" placeholder="ST depression induced" required="required" />
+
+      <input type="text" name="slope" placeholder="slope of the peak" required="required" />
+      <input type="text" name="ca" placeholder="number of major vessels (0-3)" required="required" />
+      <input type="text" name="thal" placeholder="thal" required="required" />
+
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ output }}
+
+ </div>
+
+
+</body>
+</html>
